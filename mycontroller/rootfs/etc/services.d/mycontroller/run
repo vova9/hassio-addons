@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# Start mycontroller service
+# ==============================================================================
+cd /usr/local/mycontroller
+
+exec java -Xms8m \
+          -Xmx150m \
+          -Dlogback.configurationFile=/etc/mycontroller/logback.xml \
+          -Dmc.conf.file=/etc/mycontroller/mycontroller.properties \
+          -cp lib/* org.mycontroller.standalone.StartApp 2>&1
