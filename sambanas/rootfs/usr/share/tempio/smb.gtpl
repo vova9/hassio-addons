@@ -44,7 +44,7 @@
 {{ define "SHT" }}
 [{{- .share | regexFind "[A-Za-z0-9_]+$"}}]
    browseable = yes
-   writeable = yes
+   writable = yes
 
    path = /{{- .share }}
    valid users = {{ .users|default .username|join " " }}
