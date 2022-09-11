@@ -24,6 +24,7 @@ function mount_disk() { # $1 disk $2 path $3 remote_mount
 
      mkdir -p $path/$disk
      chmod a+rwx $path/$disk
+     bashio::log.info "Disk ${path} ${disk} is already mounted"
 
      # check with findmnt if the disk is already mounted
      if findmnt -n -o TARGET $path/$disk >/dev/null 2>&1; then
